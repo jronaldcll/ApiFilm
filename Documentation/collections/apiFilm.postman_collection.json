@@ -1,0 +1,489 @@
+{
+	"info": {
+		"_postman_id": "cdf29498-f56f-40d7-ac37-e56edecabcc4",
+		"name": "apiFilm",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://apifilm/api/auth/signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"namuse\": \"Ronald\",\n    \"lastname\": \"Castillo\",\n    \"maiuse\": \"jronaldcll@gmail.com\",\n    \"fecnac\": \"1993-09-29\",\n    \"password\": \"Cont2020$\",\n    \"password_confirmation\": \"Cont2020$\"\n}"
+				},
+				"url": {
+					"raw": "http://apifilm/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"apifilm"
+					],
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				},
+				"description": "Register User"
+			},
+			"response": []
+		},
+		{
+			"name": "http://apifilm/api/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"maiuse\": \"jronaldcll@gmail.com\",\n    \"password\": \"Cont2020$\",\n    \"remember_me\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://apifilm/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"apifilm"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				},
+				"description": "Login user"
+			},
+			"response": []
+		},
+		{
+			"name": "http://apifilm/api/auth/logout",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTQ5ODc5ZGM5NjdjMGJmY2U3MWFkY2UyYmU1ZDRmYjE5MDVlZWZlM2JjM2MwZmM2MmM0NzZjODBmNDdmZmU2Nzc2ZDNhNjIzYjAxZGMzZGIiLCJpYXQiOjE2MDUwNDM3ODMsIm5iZiI6MTYwNTA0Mzc4MywiZXhwIjoxNjM2NTc5NzgzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.c1YJDM6CrelP68P4zAoemkqT-pTkV7FqxcQZAlqeeys25fGkz9L4ho6UPPn5F5-1f5xBOWRmteG1ilOZVz_gC9rYdWFMGcf8tqAZzTCuzvnX4vSYxenc-Y2twkwXhTWUgjH9tQ9m_fju1rNqocXDfHMuO6Qrq5SQPrMY9EbOsh6JCK_rbcUM-hsqmswnP336asQZdi80WXxQU8jXOrE4GpC0HErNvkPeYW43cQAnMmCHYuVyuJzzo3qVHDocQxK__p_fts6SQg6GoKZ7leRZGZ30zdvyoHy1y8KMR5Ao10e0W6X9CiMFTSWPlJuCqa_dDQCCm8phCE5TZ1ax8PwXxnNP_RFs8REGZUgw3rTm-060oh0674CQmLkXOsjqHKYG7cnP_70Mi1ZunnlZykV6_6EVC90-abn_q1O3O5Sr7Qrp3CwF6XbeBlILK3miZ52yOtF5t4-rQq5LtzAqcwYV5famrL74L53GzdhaKmQCWOcGOnMVq8c0vBGxET3s9JlOXluKXGIkzXo16B3zWDn3vOXbGLCPAyFm5tTh7rmBn_ru8XARJr00pxGEnwtGhXuc-VOE1Y1i_0ftOfjljuZpXzVn74K7tjdoPWK55i_QnbIYB5le8wVdxF0DwXleyT8m3DEyPnJFjB2W95WQbrUZh8USSfSYZxM-oyu8cE6FSg0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://apifilm/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"apifilm"
+					],
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				},
+				"description": "Logout user"
+			},
+			"response": []
+		},
+		{
+			"name": "http://apifilm/api/auth/user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzIxYjJlMjJlOWYxMzZmNmI5YTgyY2M5NDIwNzE3ZTZkNGFmMWZiZDJlODM1ODU0ODk5ZDAyYjk1NWIxYzZhOTMwOTE4YjNiM2Y2M2Q1NDUiLCJpYXQiOjE2MDUwNDg0NjgsIm5iZiI6MTYwNTA0ODQ2OCwiZXhwIjoxNjM2NTg0NDY4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.VkbUIRT-AYsyjjyK9OnqS3ACYRyTDoZhKKv5Vq8QnYbULdC-s3-6sS_0mRsPL14JsST8C9Lz3tizh6dM3OOGjPXedFwDcJE5TdyrlVH-LlTolHNzZeHtxk9uZg4VjpnZXe-PggUKiFMekgd-hyhmfBlv-1--Vo8kINUEEovEMb0yClcxH98Qcu6c1X1Zlu73cgBn_2rYx9HkMz6wUfY3MIAe52dqwl0P6b2T3DZq_j2DNoOyhnNBkbjI0nTwVSH50GVIkPUfb7UPzpI9awSxL5ob4SAjkwOJZJBVuGfgorJ159tjkWHwsqPGzhS1bLHk4WOCrdRBJBGG2KV5a8JPv6OOtIXBoKUAfUP2rzZ60iRt_5HZR3gkdQ-0JF7Ql87Iy7gpChTlYdAAJlOz-zIobHUlGUiWJaS3T3xgTYL_dqNArQ8K2bzO-XlY1S4hjTdJp9AOWioyoaZ8PJE8Wzgs4GDRZ7-Jo5lexujAfGzv73O8ONKGsii9WgO6iYTWUsXdfcjRwTOtub_zpXK6xtgbEJqVJl1HgT5_ugsrqpMHL4GuxJKfMe7f2EK6r2IgmBLHaaDi4jcw3z3VvD3dabAxv9lrk4uC_YRJZoI4zdn-1iEVYfH1yCkVqlXc-1B_p20Du11gpqICWSYbtSFziIhtBgBvdQNP9wcjIuICxvk3kfc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://apifilm/api/auth/user",
+					"protocol": "http",
+					"host": [
+						"apifilm"
+					],
+					"path": [
+						"api",
+						"auth",
+						"user"
+					]
+				},
+				"description": "Consult User"
+			},
+			"response": []
+		},
+		{
+			"name": "http://apifilm/api/films",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjllNTNkMDI4ZjU3OTZlMTRiMWVhYmE2OTFhMGI1N2E4OWQ5N2E3OTIyYjViOTI2ZDIyNmYxMWJkZTljNTdmZDgzM2ZmNGZlYzI2MmE2NjciLCJpYXQiOjE2MDUxMTYyNTksIm5iZiI6MTYwNTExNjI1OSwiZXhwIjoxNjM2NjUyMjU5LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.XTV7wUGRRflJOBCbX-y3a1hEPhuBy-nsflYdsAFdmnkctEM6zBDkG0R1_qov73q8cIJVQWewv6ICAIZhlm0a4NL9qxdLr5wWPgw0xtkTzOPNdIDPSBFCyUdgEO2a3Z1GVF2-isSO0PzohZX32CNL53ORRohVTGzo-PP0cLjG5ptrZH40gin_bqy7uJ6vownjE1u6HxWFzMYxcYkbgxNrG_W2aPDkFUXF7LbYoPwqSJYCSr5Rp2tzOlMxfIJHoRrtpIhQTeElv0DExFWW2Mce3iqVytyOl-V_wvLxL9Q8f0usM1Erm8csRvbPfDqTYXhMSFQzQcJFpVL0mUo8N6Ezxr8eQw0Ruro7qtRKq_1Vn9VzFZFrwuC9GOnEYIiW17W3JCbmOVpoRYg88Y5F8a9_FS8xgLGVkKFYVsCVFJJPQQajeJoJAkBHhk4HaohJ2EmIPbZZCuPFN94WaQi-jVv1DVLsrnKuv3NCS9EvvEVx3I3zpTeR3N_UxrbKbMbjOhmRWlmNMxLC3xXlIVPk7r8NsM85LImDZaBRWFdbHEv7PhCVZMovrSPqePjJ7_4Fn9zhT2wl65vou8XRTq86T9gLjzoInciLFN_YlZdrEMEYVOYat6a_vMV-ZlLDwXVtr0yF4MFccj-FhJgrTLRllD9yIWN1ADnYyANH45AdXFQe2Nk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://apifilm/api/films",
+					"protocol": "http",
+					"host": [
+						"apifilm"
+					],
+					"path": [
+						"api",
+						"films"
+					]
+				},
+				"description": "Search film"
+			},
+			"response": []
+		},
+		{
+			"name": "http://apifilm/api/films",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjJjNDEyMzBkYWE2ZGY0MDNiOTgyNTA4MDE0Y2RmODYxNDExYjE3MjU0YjM3OGY3MWVjMGJkZDBkZGE2ZmJiZWIxMWY4YTNjMDRhNmJhZDIiLCJpYXQiOjE2MDUxMjUxOTIsIm5iZiI6MTYwNTEyNTE5MiwiZXhwIjoxNjM2NjYxMTkyLCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.fCUWaTaAdNhBSL28UATmzEzJ8k8OtkHeU1gPfashVyn2fPUfefPtR-IgR2iqA_EftppX_P77MTHwWeZGZnbLY7pGhiIl9MXBnQMEEvITqJSuq23RjBAEkM-wk29PJUj8Zy5EWV1uSkLvyHx5C8MsETIlDboUCg99Nwvz7UfKENXpT5CL25lZpwbe9XR7pSmY9TmPLS9X1MlRYtlhsLuMNuHo8vwUpzkPu5ZpyFZbLpFkRtOJu5RL78wzWJIX6Of12X1LJnqxTgGcMcigDGi7fGjPqzcm03v12VTEfzCmp17lbImhwMiPhlFhM9oAHs1d0QzLje_eq2dz9WVSNJlvHFNVD7VfFSmfCsqiCCwyD6ppZg0ZPzC_tjMcsk5GOLD9zdxiiy9CiLJPHntIAyS4ZufQ-dp-Ud8HlZ1xysmxU8kjw_ZUAvmSjYcd3qRJ2Z-_ECq--YzrbyjoSVxrTrtqRfHELFeWFJqEMupEu1AHUmXVLJPXK8IugDqnIGrjpAU9V7UDaAG3pQJUrUkLIOssO8H6dISkeR226GEiOOj3ksMUjtb3Rf-xUD-IdVcFAN7n7vCxDzxWEEvRV1mgcYwhLu8YpQ73PlC_AtXbYzQ_K67PFU9YdzgH9H-JB7YB1Pr6ayI_neZ0zsHnn-p3aXuUWkThSFEjkxD8U7pbzQCfuJw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "namefilm",
+							"value": "Richard Jewell",
+							"type": "text"
+						},
+						{
+							"key": "desfilm",
+							"value": "Clint Eastwood vuelve a adaptar una increíble historia real en una película que ha armado más ruido por motivos extracinematográficos. ",
+							"type": "text"
+						},
+						{
+							"key": "fecEst",
+							"value": "2020-01-01",
+							"type": "text"
+						},
+						{
+							"key": "maiuse",
+							"value": "jronaldcll@gmail.com",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://apifilm/api/films",
+					"protocol": "http",
+					"host": [
+						"apifilm"
+					],
+					"path": [
+						"api",
+						"films"
+					]
+				},
+				"description": "Insert film"
+			},
+			"response": []
+		},
+		{
+			"name": "http://apifilm/api/films/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjJjNDEyMzBkYWE2ZGY0MDNiOTgyNTA4MDE0Y2RmODYxNDExYjE3MjU0YjM3OGY3MWVjMGJkZDBkZGE2ZmJiZWIxMWY4YTNjMDRhNmJhZDIiLCJpYXQiOjE2MDUxMjUxOTIsIm5iZiI6MTYwNTEyNTE5MiwiZXhwIjoxNjM2NjYxMTkyLCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.fCUWaTaAdNhBSL28UATmzEzJ8k8OtkHeU1gPfashVyn2fPUfefPtR-IgR2iqA_EftppX_P77MTHwWeZGZnbLY7pGhiIl9MXBnQMEEvITqJSuq23RjBAEkM-wk29PJUj8Zy5EWV1uSkLvyHx5C8MsETIlDboUCg99Nwvz7UfKENXpT5CL25lZpwbe9XR7pSmY9TmPLS9X1MlRYtlhsLuMNuHo8vwUpzkPu5ZpyFZbLpFkRtOJu5RL78wzWJIX6Of12X1LJnqxTgGcMcigDGi7fGjPqzcm03v12VTEfzCmp17lbImhwMiPhlFhM9oAHs1d0QzLje_eq2dz9WVSNJlvHFNVD7VfFSmfCsqiCCwyD6ppZg0ZPzC_tjMcsk5GOLD9zdxiiy9CiLJPHntIAyS4ZufQ-dp-Ud8HlZ1xysmxU8kjw_ZUAvmSjYcd3qRJ2Z-_ECq--YzrbyjoSVxrTrtqRfHELFeWFJqEMupEu1AHUmXVLJPXK8IugDqnIGrjpAU9V7UDaAG3pQJUrUkLIOssO8H6dISkeR226GEiOOj3ksMUjtb3Rf-xUD-IdVcFAN7n7vCxDzxWEEvRV1mgcYwhLu8YpQ73PlC_AtXbYzQ_K67PFU9YdzgH9H-JB7YB1Pr6ayI_neZ0zsHnn-p3aXuUWkThSFEjkxD8U7pbzQCfuJw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://apifilm/api/films/1",
+					"protocol": "http",
+					"host": [
+						"apifilm"
+					],
+					"path": [
+						"api",
+						"films",
+						"1"
+					]
+				},
+				"description": "Search for id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://apifilm/api/films/7",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjJjNDEyMzBkYWE2ZGY0MDNiOTgyNTA4MDE0Y2RmODYxNDExYjE3MjU0YjM3OGY3MWVjMGJkZDBkZGE2ZmJiZWIxMWY4YTNjMDRhNmJhZDIiLCJpYXQiOjE2MDUxMjUxOTIsIm5iZiI6MTYwNTEyNTE5MiwiZXhwIjoxNjM2NjYxMTkyLCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.fCUWaTaAdNhBSL28UATmzEzJ8k8OtkHeU1gPfashVyn2fPUfefPtR-IgR2iqA_EftppX_P77MTHwWeZGZnbLY7pGhiIl9MXBnQMEEvITqJSuq23RjBAEkM-wk29PJUj8Zy5EWV1uSkLvyHx5C8MsETIlDboUCg99Nwvz7UfKENXpT5CL25lZpwbe9XR7pSmY9TmPLS9X1MlRYtlhsLuMNuHo8vwUpzkPu5ZpyFZbLpFkRtOJu5RL78wzWJIX6Of12X1LJnqxTgGcMcigDGi7fGjPqzcm03v12VTEfzCmp17lbImhwMiPhlFhM9oAHs1d0QzLje_eq2dz9WVSNJlvHFNVD7VfFSmfCsqiCCwyD6ppZg0ZPzC_tjMcsk5GOLD9zdxiiy9CiLJPHntIAyS4ZufQ-dp-Ud8HlZ1xysmxU8kjw_ZUAvmSjYcd3qRJ2Z-_ECq--YzrbyjoSVxrTrtqRfHELFeWFJqEMupEu1AHUmXVLJPXK8IugDqnIGrjpAU9V7UDaAG3pQJUrUkLIOssO8H6dISkeR226GEiOOj3ksMUjtb3Rf-xUD-IdVcFAN7n7vCxDzxWEEvRV1mgcYwhLu8YpQ73PlC_AtXbYzQ_K67PFU9YdzgH9H-JB7YB1Pr6ayI_neZ0zsHnn-p3aXuUWkThSFEjkxD8U7pbzQCfuJw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "namefilm",
+							"value": "Richard Jewell",
+							"type": "text"
+						},
+						{
+							"key": "desfilm",
+							"value": "Clint Eastwood vuelve a adaptar una increíble historia real en una película que ha armado más ruido por motivos extracinematográficos. (Good)",
+							"type": "text"
+						},
+						{
+							"key": "fecEst",
+							"value": "2020-01-01",
+							"type": "text"
+						},
+						{
+							"key": "maiuse",
+							"value": "jronaldcll@gmail.com",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://apifilm/api/films/7",
+					"protocol": "http",
+					"host": [
+						"apifilm"
+					],
+					"path": [
+						"api",
+						"films",
+						"7"
+					]
+				},
+				"description": "update film"
+			},
+			"response": []
+		},
+		{
+			"name": "http://apifilm/api/films/7",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjJjNDEyMzBkYWE2ZGY0MDNiOTgyNTA4MDE0Y2RmODYxNDExYjE3MjU0YjM3OGY3MWVjMGJkZDBkZGE2ZmJiZWIxMWY4YTNjMDRhNmJhZDIiLCJpYXQiOjE2MDUxMjUxOTIsIm5iZiI6MTYwNTEyNTE5MiwiZXhwIjoxNjM2NjYxMTkyLCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.fCUWaTaAdNhBSL28UATmzEzJ8k8OtkHeU1gPfashVyn2fPUfefPtR-IgR2iqA_EftppX_P77MTHwWeZGZnbLY7pGhiIl9MXBnQMEEvITqJSuq23RjBAEkM-wk29PJUj8Zy5EWV1uSkLvyHx5C8MsETIlDboUCg99Nwvz7UfKENXpT5CL25lZpwbe9XR7pSmY9TmPLS9X1MlRYtlhsLuMNuHo8vwUpzkPu5ZpyFZbLpFkRtOJu5RL78wzWJIX6Of12X1LJnqxTgGcMcigDGi7fGjPqzcm03v12VTEfzCmp17lbImhwMiPhlFhM9oAHs1d0QzLje_eq2dz9WVSNJlvHFNVD7VfFSmfCsqiCCwyD6ppZg0ZPzC_tjMcsk5GOLD9zdxiiy9CiLJPHntIAyS4ZufQ-dp-Ud8HlZ1xysmxU8kjw_ZUAvmSjYcd3qRJ2Z-_ECq--YzrbyjoSVxrTrtqRfHELFeWFJqEMupEu1AHUmXVLJPXK8IugDqnIGrjpAU9V7UDaAG3pQJUrUkLIOssO8H6dISkeR226GEiOOj3ksMUjtb3Rf-xUD-IdVcFAN7n7vCxDzxWEEvRV1mgcYwhLu8YpQ73PlC_AtXbYzQ_K67PFU9YdzgH9H-JB7YB1Pr6ayI_neZ0zsHnn-p3aXuUWkThSFEjkxD8U7pbzQCfuJw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://apifilm/api/films/7",
+					"protocol": "http",
+					"host": [
+						"apifilm"
+					],
+					"path": [
+						"api",
+						"films",
+						"7"
+					]
+				},
+				"description": "Delete film"
+			},
+			"response": []
+		},
+		{
+			"name": "http://apifilm/api/film/search/ho",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzE4NTdlN2NlMWFjOTFjNGU1ZjgwZTlkNmQ0NThjMDlkNTA0YTgxYzUyNGUwNGNlZTM1Y2I1Zjk4MGNmNDFmNjdmYzdmMzEyYzBjNmM5ODMiLCJpYXQiOjE2MDUxMzAzMTEsIm5iZiI6MTYwNTEzMDMxMSwiZXhwIjoxNjM2NjY2MzExLCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.E-0eKqNEoxG_AE-6FV99vPfHKD401HQT3lwcQlKZRThUqhhLx_53ePsvQBQXQNbF79U2f-_P1xgoYZa6H0UrGqqDpDE0jkK40BBbAZcohY_wMLk0f-9opB4EvcKdmJTkM7bIQ2_21HcsN1qYJQBnrQwFjvMOxizsxmKUv_JOkYnvvrDB0-BCulmLiM5CtxDZ8DXp5uISfYQPbRK0mhYosX0lDLbkgKWx76J4QWu65FtflPRUiCDz3cCOeWWTVGon7_wGaQlVtrH2sZjyVZtpDH_ssBoXeMbrXJhCzjdu9_iJsVZk-SQIWeEjxQKQk91w2jiN0j3-pD41JQvArSqMn0fZDnt3wdmbhAfBKmFRijL78QqEgvMNn7t4qFKXRN3_uX8IpkMR2RpvZ8IANbAgmi4N7O6V1GW-AiLwaLhbPmYA9_ywUBW5IZ0QcGtgxq6hlOAG5_ih-aPhLPfhPm_30Sy3pmZlfSeckPLBeZ0goLq41KFhXRlAuTdkgQmkSdOvzv3Flx9UvwyoVr4MoLXAuGztwORdFP7QTyKZ8pT4GyPGXC_pscDHtlDP6cqYhWR-4KYG7461HkKhPzYcDCaL0EEyDkgqW7hMbTpGTQ4QZNIEGO91WlEg9voyOcMh2vTRsgomOpLanP8000Peei2y_M3DD8WfJ4yyKmonMn2Hqv8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://apifilm/api/film/search/ho",
+					"protocol": "http",
+					"host": [
+						"apifilm"
+					],
+					"path": [
+						"api",
+						"film",
+						"search",
+						"ho"
+					]
+				},
+				"description": "Search by name"
+			},
+			"response": []
+		},
+		{
+			"name": "http://apifilm/api/films/page/2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzE4NTdlN2NlMWFjOTFjNGU1ZjgwZTlkNmQ0NThjMDlkNTA0YTgxYzUyNGUwNGNlZTM1Y2I1Zjk4MGNmNDFmNjdmYzdmMzEyYzBjNmM5ODMiLCJpYXQiOjE2MDUxMzAzMTEsIm5iZiI6MTYwNTEzMDMxMSwiZXhwIjoxNjM2NjY2MzExLCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.E-0eKqNEoxG_AE-6FV99vPfHKD401HQT3lwcQlKZRThUqhhLx_53ePsvQBQXQNbF79U2f-_P1xgoYZa6H0UrGqqDpDE0jkK40BBbAZcohY_wMLk0f-9opB4EvcKdmJTkM7bIQ2_21HcsN1qYJQBnrQwFjvMOxizsxmKUv_JOkYnvvrDB0-BCulmLiM5CtxDZ8DXp5uISfYQPbRK0mhYosX0lDLbkgKWx76J4QWu65FtflPRUiCDz3cCOeWWTVGon7_wGaQlVtrH2sZjyVZtpDH_ssBoXeMbrXJhCzjdu9_iJsVZk-SQIWeEjxQKQk91w2jiN0j3-pD41JQvArSqMn0fZDnt3wdmbhAfBKmFRijL78QqEgvMNn7t4qFKXRN3_uX8IpkMR2RpvZ8IANbAgmi4N7O6V1GW-AiLwaLhbPmYA9_ywUBW5IZ0QcGtgxq6hlOAG5_ih-aPhLPfhPm_30Sy3pmZlfSeckPLBeZ0goLq41KFhXRlAuTdkgQmkSdOvzv3Flx9UvwyoVr4MoLXAuGztwORdFP7QTyKZ8pT4GyPGXC_pscDHtlDP6cqYhWR-4KYG7461HkKhPzYcDCaL0EEyDkgqW7hMbTpGTQ4QZNIEGO91WlEg9voyOcMh2vTRsgomOpLanP8000Peei2y_M3DD8WfJ4yyKmonMn2Hqv8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://apifilm/api/films/page/2",
+					"protocol": "http",
+					"host": [
+						"apifilm"
+					],
+					"path": [
+						"api",
+						"films",
+						"page",
+						"2"
+					]
+				},
+				"description": "Paginate "
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
