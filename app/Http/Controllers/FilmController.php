@@ -26,14 +26,32 @@ class FilmController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function getSearchResults(Request $request)
+    public function getSearchResults($data)
     {
-        $data = $request->get('data');
+        
         $films = Film::where('namefilm', 'like', "%{$data}%")
                  ->get();
         return response([ 'films' => FilmResource::collection($films), 'message' => 'Retrieved successfully'], 200);
     }
 
+    /**
+     * Display a listing of the resource by name.
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function getPageResults($page)
+    {   
+        
+        $pageNumber = intval($page);
+        if (is_numeric($pageNumber)) {
+            $pageNumber=$pageNumber;
+        }else{
+            $pageNumber=1;
+        }
+        
+        $films = Film::paginate(2, ['*'], 'page', $pageNumber);
+        return response([ 'films' => FilmResource::collection($films), 'message' => 'Retrieved successfully'], 200);
+    }
     
 
     /**

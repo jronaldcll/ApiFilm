@@ -37,4 +37,6 @@ Route::group([
 
 Route::apiResource('films', FilmController::class)->middleware('auth:api');
 
-Route::get('/film/search/{data}', 'FilmController@getSearchResults');
+Route::get('film/search/{data}', 'FilmController@getSearchResults');
+
+Route::get('films/page/{page}', 'FilmController@getPageResults');
