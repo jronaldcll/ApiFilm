@@ -15,10 +15,10 @@ use App\Http\Controllers\FilmResource;
 |
 */
 
-/*Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-*/
+
 
 Route::group([
     'prefix' => 'auth'
@@ -50,3 +50,7 @@ Route::group([
 });*/
 
 Route::apiResource('films', FilmController::class)->middleware('auth:api');
+/*
+Route::middleware('auth:api')->group(function () {
+    Route::resource('films', 'FilmController');
+});*/

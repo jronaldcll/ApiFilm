@@ -22,4 +22,13 @@ class Film extends Model
         'maiuse',
     ];
 
+     /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'maiuse' => 'string',
+    ];
+
 }
