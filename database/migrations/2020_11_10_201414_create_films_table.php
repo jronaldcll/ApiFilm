@@ -19,6 +19,7 @@ class CreateFilmsTable extends Migration
             $table->text('desfilm');
             $table->date('fecEst');
             $table->string('maiuse', 30);
+            $table->timestamps();
         });
     }
 

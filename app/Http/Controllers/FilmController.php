@@ -21,6 +21,21 @@ class FilmController extends Controller
         return response([ 'films' => FilmResource::collection($films), 'message' => 'Retrieved successfully'], 200);
     }
 
+     /**
+     * Display a listing of the resource by name.
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function getSearchResults(Request $request)
+    {
+        $data = $request->get('data');
+        $films = Film::where('namefilm', 'like', "%{$data}%")
+                 ->get();
+        return response([ 'films' => FilmResource::collection($films), 'message' => 'Retrieved successfully'], 200);
+    }
+
+    
+
     /**
      * Store a newly created resource in storage.
      *

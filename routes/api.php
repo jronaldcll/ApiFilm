@@ -34,23 +34,7 @@ Route::group([
     });
 });
 
-/*Route::group([
-    'prefix' => 'film'
-], function () {
-    Route::post('store', 'FilmController@store');
-    Route::post('update', 'FilmController@update');
-    Route::post('destroy', 'FilmController@destroy');
-  
-    Route::group([
-      'middleware' => 'auth:api'
-    ], function() {
-        Route::get('index', 'FilmController@index');
-        Route::get('show', 'FilmController@show');
-    });
-});*/
 
 Route::apiResource('films', FilmController::class)->middleware('auth:api');
-/*
-Route::middleware('auth:api')->group(function () {
-    Route::resource('films', 'FilmController');
-});*/
+
+Route::get('/film/search/{data}', 'FilmController@getSearchResults');
