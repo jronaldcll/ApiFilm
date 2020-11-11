@@ -34,7 +34,7 @@ Route::group([
     });
 });
 
-Route::group([
+/*Route::group([
     'prefix' => 'film'
 ], function () {
     Route::post('store', 'FilmController@store');
@@ -42,9 +42,11 @@ Route::group([
     Route::post('destroy', 'FilmController@destroy');
   
     Route::group([
-      'middleware' => 'film:api'
+      'middleware' => 'auth:api'
     ], function() {
         Route::get('index', 'FilmController@index');
         Route::get('show', 'FilmController@show');
     });
-});
+});*/
+
+Route::apiResource('films', FilmController::class)->middleware('auth:api');

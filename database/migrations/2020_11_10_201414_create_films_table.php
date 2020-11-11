@@ -16,7 +16,7 @@ class CreateFilmsTable extends Migration
         Schema::create('films', function (Blueprint $table) {
             $table->id();
             $table->string('namefilm',20);
-            $table->string('desfilm', 20);
+            $table->text('desfilm');
             $table->date('fecEst');
             $table->string('maiuse', 30);
         });
